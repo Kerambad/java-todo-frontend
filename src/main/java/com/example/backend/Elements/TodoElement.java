@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 
 public class TodoElement {
-    private int id;
+    private Integer id;
     private String description;
     private String status;
 }

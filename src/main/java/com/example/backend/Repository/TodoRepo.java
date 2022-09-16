@@ -15,6 +15,8 @@ public class TodoRepo {
 
     public TodoRepo(List<TodoElement> ListElements) {
         for (TodoElement singleElement : ListElements){
+            if(singleElement.getId() == null)
+                singleElement.setId(elements.size() + 1);
             elements.put(singleElement.getId(),singleElement);
         }
     }
@@ -23,9 +25,16 @@ public class TodoRepo {
         return List.copyOf(elements.values());
     }
 
-    public void postNewElement(List<TodoElement> newElement) {
-        for (TodoElement curentElement : newElement) {
-            elements.put(curentElement.getId(), curentElement);
-        }
+    public void postNewElement(TodoElement newElement) {
+        if(newElement != null)
+        elements.put(newElement.getId(),newElement);
     }
+
+//    public void postNewElement(List<TodoElement> newElement) {
+//        for (TodoElement curentElement : newElement) {
+//            elements.put(curentElement.getId(), curentElement);
+//        }
+//    }
+
+
 }

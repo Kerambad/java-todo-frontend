@@ -19,7 +19,7 @@ public class TodoService {
         return repo.getAllElements();
     }
 
-    public void postNewElement(List<TodoElement> newElement) {
+    public void postNewElement(TodoElement newElement) {
         repo.postNewElement(newElement);
     }
 

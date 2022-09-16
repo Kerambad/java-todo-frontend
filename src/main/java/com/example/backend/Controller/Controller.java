@@ -27,7 +27,7 @@ public class Controller {
 
     }
     @PostMapping
-    public void requestElement(@RequestBody ArrayList<TodoElement> element) {
+    public void requestElement(@RequestBody TodoElement element) {
         service.postNewElement(element);
     }
 }
