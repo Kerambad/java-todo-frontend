@@ -14,11 +14,11 @@ public class TodoRepo {
     private Map<Integer,TodoElement> elements;
 
     public TodoRepo(List<TodoElement> ListElements) {
+        Map<Integer,TodoElement> temp = new HashMap<>();
         for (TodoElement singleElement : ListElements){
-            if(singleElement.getId() == null)
-                singleElement.setId(elements.size() + 1);
             elements.put(singleElement.getId(),singleElement);
         }
+        this.elements = temp;
     }
 
     public List<TodoElement> getAllElements() {
@@ -26,15 +26,15 @@ public class TodoRepo {
     }
 
     public void postNewElement(TodoElement newElement) {
-        if(newElement != null)
+        newElement.setId(elements.size() + 1);
         elements.put(newElement.getId(),newElement);
     }
-
-//    public void postNewElement(List<TodoElement> newElement) {
-//        for (TodoElement curentElement : newElement) {
-//            elements.put(curentElement.getId(), curentElement);
-//        }
-//    }
+    public void changeStatus(TodoElement toChange) {
+        elements.put(toChange.getId(),toChange);
+    }
+    public List<TodoElement> showDetails(String id) {
+        return List.of(elements.get(Integer.parseInt(id)));
+    }
 
 
 }

@@ -30,4 +30,14 @@ public class Controller {
     public void requestElement(@RequestBody TodoElement element) {
         service.postNewElement(element);
     }
+
+    @PutMapping("{id}")
+    public void changeStatus(@RequestBody TodoElement element) {
+        service.toChange(element);
+    }
+
+    @GetMapping("{id}")
+    public List<TodoElement> showDetails(@PathVariable String id) {
+        return service.showDetails(id);
+    }
 }

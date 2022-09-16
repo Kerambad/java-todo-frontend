@@ -22,5 +22,11 @@ public class TodoService {
     public void postNewElement(TodoElement newElement) {
         repo.postNewElement(newElement);
     }
+    public void toChange(TodoElement toChange) {
+        repo.changeStatus(toChange);
+    }
+    public List<TodoElement> showDetails(String id) {
+        return repo.showDetails(id);
+    }
 
 }
