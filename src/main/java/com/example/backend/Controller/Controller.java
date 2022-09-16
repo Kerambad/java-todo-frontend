@@ -30,18 +30,18 @@ public class Controller {
     public void requestElement(@RequestBody TodoElement element) {
         service.postNewElement(element);
     }
-
-    @PutMapping("{id}")
-    public void changeStatus(@RequestBody TodoElement element) {
-        service.toChange(element);
-    }
-
-    @GetMapping("{id}")
-    public TodoElement showDetails(@PathVariable String id) {
-        return service.showDetails(id);
-    }
-    @DeleteMapping("{id}")
-    public void deleteElement(@PathVariable String id) {
-        service.deleteElement(id);
-    }
+//
+//    @PutMapping("{id}")
+//    public void changeStatus(@RequestBody TodoElement element) {
+//        service.toChange(element);
+//    }
+//
+//    @GetMapping("{id}")
+//    public TodoElement showDetails(@PathVariable String id) {
+//        return service.showDetails(id);
+//    }
+//    @DeleteMapping("{id}")
+//    public void deleteElement(@PathVariable String id) {
+//        service.deleteElement(id);
+//    }
 }
