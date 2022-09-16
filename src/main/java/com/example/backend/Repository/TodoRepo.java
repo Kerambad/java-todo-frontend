@@ -12,6 +12,7 @@ public class TodoRepo {
 
 
     private Map<Integer,TodoElement> elements;
+    private int id;
 
     public TodoRepo(List<TodoElement> ListElements) {
         Map<Integer,TodoElement> temp = new HashMap<>();
@@ -26,14 +27,18 @@ public class TodoRepo {
     }
 
     public void postNewElement(TodoElement newElement) {
-        newElement.setId(elements.size() + 1);
+        newElement.setId(++id);
         elements.put(newElement.getId(),newElement);
     }
     public void changeStatus(TodoElement toChange) {
         elements.put(toChange.getId(),toChange);
     }
-    public List<TodoElement> showDetails(String id) {
-        return List.of(elements.get(Integer.parseInt(id)));
+    public TodoElement showDetails(String id) {
+        return elements.get(Integer.parseInt(id));
+    }
+    public void deleteElement(String id) {
+        int toDelete = Integer.parseInt(id);
+        elements.remove(toDelete);
     }
 
 

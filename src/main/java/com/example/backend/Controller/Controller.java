@@ -37,7 +37,11 @@ public class Controller {
     }
 
     @GetMapping("{id}")
-    public List<TodoElement> showDetails(@PathVariable String id) {
+    public TodoElement showDetails(@PathVariable String id) {
         return service.showDetails(id);
+    }
+    @DeleteMapping("{id}")
+    public void deleteElement(@PathVariable String id) {
+        service.deleteElement(id);
     }
 }

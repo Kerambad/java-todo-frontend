@@ -25,8 +25,10 @@ public class TodoService {
     public void toChange(TodoElement toChange) {
         repo.changeStatus(toChange);
     }
-    public List<TodoElement> showDetails(String id) {
+    public TodoElement showDetails(String id) {
         return repo.showDetails(id);
     }
-
+    public void deleteElement(String id) {
+        repo.deleteElement(id);
+    }
 }
