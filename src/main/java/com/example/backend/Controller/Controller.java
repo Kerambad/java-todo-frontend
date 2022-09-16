@@ -5,11 +5,9 @@ import com.example.backend.Service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.List.of;
-
+//TODO: make Links reloading working
 @RestController
 @RequestMapping("api/todo")
 public class Controller {
@@ -27,13 +25,13 @@ public class Controller {
 
     }
     @PostMapping
-    public void requestElement(@RequestBody TodoElement element) {
-        service.postNewElement(element);
+    public TodoElement requestElement(@RequestBody TodoElement element) {
+        return service.postNewElement(element);
     }
 
     @PutMapping("{id}")
-    public void changeStatus(@RequestBody TodoElement element) {
-        service.toChange(element);
+    public TodoElement changeStatus(@RequestBody TodoElement element) {
+        return service.toChange(element);
     }
 
     @GetMapping("{id}")
@@ -41,9 +39,7 @@ public class Controller {
         return service.showDetails(id);
     }
     @DeleteMapping("{id}")
-    public void deleteElement(@PathVariable String id) {
-        service.deleteElement(id);
+    public TodoElement deleteElement(@PathVariable String id) {
+        return service.deleteElement(id);
     }
-
-    //hfjghdfjhbdsf
 }

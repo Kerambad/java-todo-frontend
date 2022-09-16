@@ -11,13 +11,13 @@ import java.util.Map;
 public class TodoRepo {
 
 
-    private Map<Integer,TodoElement> elements;
+    private Map<Integer, TodoElement> elements;
     private int id;
 
     public TodoRepo(List<TodoElement> ListElements) {
-        Map<Integer,TodoElement> temp = new HashMap<>();
-        for (TodoElement singleElement : ListElements){
-            elements.put(singleElement.getId(),singleElement);
+        Map<Integer, TodoElement> temp = new HashMap<>();
+        for (TodoElement singleElement : ListElements) {
+            temp.put(singleElement.getId(), singleElement);
         }
         this.elements = temp;
     }
@@ -26,20 +26,24 @@ public class TodoRepo {
         return List.copyOf(elements.values());
     }
 
-    public void postNewElement(TodoElement newElement) {
+    public TodoElement postNewElement(TodoElement newElement) {
         newElement.setId(++id);
-        elements.put(newElement.getId(),newElement);
+        elements.put(newElement.getId(), newElement);
+        return elements.get(id);
+
     }
-    public void changeStatus(TodoElement toChange) {
-        elements.put(toChange.getId(),toChange);
+
+    public TodoElement changeStatus(TodoElement toChange) {
+        elements.put(toChange.getId(), toChange);
+        return toChange;
     }
+
     public TodoElement showDetails(String id) {
         return elements.get(Integer.parseInt(id));
     }
-    public void deleteElement(String id) {
+
+    public TodoElement deleteElement(String id) {
         int toDelete = Integer.parseInt(id);
-        elements.remove(toDelete);
+        return elements.remove(toDelete);
     }
-
-
 }

@@ -19,16 +19,20 @@ public class TodoService {
         return repo.getAllElements();
     }
 
-    public void postNewElement(TodoElement newElement) {
-        repo.postNewElement(newElement);
+    public TodoElement postNewElement(TodoElement newElement) {
+        return repo.postNewElement(newElement);
+
     }
-    public void toChange(TodoElement toChange) {
-        repo.changeStatus(toChange);
+
+    public TodoElement toChange(TodoElement toChange) {
+        return repo.changeStatus(toChange);
     }
+
     public TodoElement showDetails(String id) {
         return repo.showDetails(id);
     }
-    public void deleteElement(String id) {
-        repo.deleteElement(id);
+
+    public TodoElement deleteElement(String id) {
+        return repo.deleteElement(id);
     }
 }
