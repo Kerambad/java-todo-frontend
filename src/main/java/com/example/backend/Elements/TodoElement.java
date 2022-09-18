@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 public class TodoElement {
     private Integer id;
+
     private String description;
     private String status;
 }

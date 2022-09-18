@@ -4,12 +4,14 @@ import com.example.backend.Elements.TodoElement;
 import com.example.backend.Service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
+import java.net.http.HttpClient;
 import java.util.List;
 
 //TODO: make Links reloading working
 @RestController
-@RequestMapping("api/todo")
+@RequestMapping(path = {"api/todo","details/","edit/"})
 public class Controller {
 
     private final TodoService service;
