@@ -1,0 +1,22 @@
+.todo-model {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 1rem 0.5rem;
+    border-radius: 9px;
+    box-shadow: 5px 5px 5px #00000052;
+}
+
+p{
+    text-align: center;
+    font-style: italic;
+    margin: 0.5rem;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem 1rem;
+}
+.buttons button {
+    width: 30%;
+}
